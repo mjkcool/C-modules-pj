@@ -1,4 +1,3 @@
-﻿//7일차 게임기본모듈 ppt슬라이드 61
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <conio.h>
