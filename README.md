@@ -103,9 +103,9 @@ void ramdomfish() {
 구조체와 구조체 포인터, 문자열를 적극 활용하였다. 
 도서관의 도서를 관리하는 프로그램으로, 기능으로는 도서 정보 추가, 도서 정보 삭제, 도서 정보 수정, 도서 목록 조회 그리고 프로그램 종료가 있다. 초기 화면에서 원하는 동작의 번호를 입력하면 해당 기능이 수행되고, 수행 기록에 대한 출력이 지워진 후 다시 초기의 화면으로 돌아간다.
 
-![image](https://user-images.githubusercontent.com/53461080/112749012-8de31e80-8ffa-11eb-9daa-2508a100bbd0.png)
-![image](https://user-images.githubusercontent.com/53461080/112749040-b10dce00-8ffa-11eb-944f-942a1168218a.png)
-![image](https://user-images.githubusercontent.com/53461080/112749043-b703af00-8ffa-11eb-81f6-7e9da65f7b27.png)
+|  |  |  |
+| ------------- | ------------- | ------------- |
+| <img src=https://user-images.githubusercontent.com/53461080/112749012-8de31e80-8ffa-11eb-9daa-2508a100bbd0.png>  | <img src=https://user-images.githubusercontent.com/53461080/112749040-b10dce00-8ffa-11eb-944f-942a1168218a.png>  | <img src=https://user-images.githubusercontent.com/53461080/112749043-b703af00-8ffa-11eb-81f6-7e9da65f7b27.png>  |
 
 ### function 1
 도서 정보를 정의한 구조체 Book. 도서의 정보인 제목, 작가, 페이지수를 속성으로 정의하였다. 사용자 정의 함수의 매개변수로 구조체 Book의 포인터 타입을 선언하였다.
@@ -167,11 +167,10 @@ void deleteout(struct Book* book_infos) {
 2진 파일 입출력을 활용하여 데이터 저장과 수정이 가능하도록 하였다. 구조체 사용으로 프로그램의 효율성을 높였다. 
 전화번호부 주소록을 관리하는 프로그램이다. 기능으로는 연락처 정보 추가, 정보 삭제, 정보 수정, 전화번호부 목록 조회 그리고 프로그램 종료가 있다. 프로그램이 동작하면서 만들어지는 텍스트 파일에 데이터가 저장되어 프로그램 종료 후 다시 실행해도 그 데이터가 남아있다. 최초 실행시 정보가 기록된 파일이 존재하지 않으므로 정보 등록 과정이 필요하다. 주소록 한도 개수를 초과할 경우 더이상의 정보 등록이 불가능하다. 정보 조회, 삭제, 수정 동작에서 존재하지 않는 정보를 입력할 시 해당 정보가 없다는 메시지가 출력된다. 주소록 정보에 대한 primary key는 해당 주소록 정보의 이름이다.
 
-![image](https://user-images.githubusercontent.com/53461080/112749121-4a3ce480-8ffb-11eb-9154-749c538325bc.png)
-![image](https://user-images.githubusercontent.com/53461080/112749127-4f019880-8ffb-11eb-9aa0-c13139ff38a4.png)
-![image](https://user-images.githubusercontent.com/53461080/112749139-62146880-8ffb-11eb-8a9f-89ac959fa1cb.png)
-![image](https://user-images.githubusercontent.com/53461080/112749146-68a2e000-8ffb-11eb-83af-0f5de35089c5.png)
-![image](https://user-images.githubusercontent.com/53461080/112749160-78babf80-8ffb-11eb-9c64-b8284447e86f.png)
+|  |  |
+| ------------- | ------------- |
+| <img src=https://user-images.githubusercontent.com/53461080/112749160-78babf80-8ffb-11eb-9c64-b8284447e86f.png>  | <img src=https://user-images.githubusercontent.com/53461080/112749127-4f019880-8ffb-11eb-9aa0-c13139ff38a4.png>  |
+| <img src=https://user-images.githubusercontent.com/53461080/112749139-62146880-8ffb-11eb-8a9f-89ac959fa1cb.png>  | <img src=https://user-images.githubusercontent.com/53461080/112749146-68a2e000-8ffb-11eb-83af-0f5de35089c5.png>  |
 
 ### function 1
 주소록 정보를 담는 구조체의 선언 부분이다. name이 primary key로 사용되었다.
