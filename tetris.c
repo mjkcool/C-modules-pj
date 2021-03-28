@@ -1,12 +1,10 @@
-//9ÀÏÂ÷ ºí·Ï-¹ÙµÏ-1 ppt ½½¶óÀÌµå 77
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
 
-#define box_length 15 //°ÔÀÓÀÇ ¿µ¿ª(ÁÂ¿ì ±æÀÌ)
-#define box_height 15 //¹Ù´ÚÀÇ ³ôÀÌ(»óÇÏ ±æÀÌ)
+#define box_length 15 //ê²Œì„ì˜ ì˜ì—­(ì¢Œìš° ê¸¸ì´)
+#define box_height 15 //ë°”ë‹¥ì˜ ë†’ì´(ìƒí•˜ ê¸¸ì´)
 
 void intro_game(void);
 void game_control(void);
@@ -16,7 +14,7 @@ void move_down(int x);
 void draw_rectangle(int c, int r);
 int max_block(void);
 
-int block_stack[box_length * 2 + 1] = { 0 }; //ÇØ´çÀ§Ä¡ÀÇ °ªÀ» 0À¸·Î ÃÊ±âÈ­
+int block_stack[box_length * 2 + 1] = { 0 }; //í•´ë‹¹ìœ„ì¹˜ì˜ ê°’ì„ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 
 int main(void) {
 	intro_game();
@@ -33,10 +31,10 @@ int main(void) {
 
 void intro_game(void) {
 	system("cls");
-	printf("ºí·Ï ½×±â  \n\n");
-	printf("ºí·ÏÀÌ ÁÂ¿ì·Î ¿òÁ÷ÀÏ ¶§ ½ºÆäÀÌ½ºÅ°¸¦ ´©¸£¸é\n");
-	printf("ºí·ÏÀÌ ¶³¾îÁ® ¹Ù´Ú¿¡ ½×ÀÔ´Ï´Ù.\n\n");
-	printf("¾Æ¹«Å°³ª ´©¸£¸é °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù. \n");
+	printf("ë¸”ë¡ ìŒ“ê¸°  \n\n");
+	printf("ë¸”ë¡ì´ ì¢Œìš°ë¡œ ì›€ì§ì¼ ë•Œ ìŠ¤í˜ì´ìŠ¤í‚¤ë¥¼ ëˆ„ë¥´ë©´\n");
+	printf("ë¸”ë¡ì´ ë–¨ì–´ì ¸ ë°”ë‹¥ì— ìŒ“ì…ë‹ˆë‹¤.\n\n");
+	printf("ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ë©´ ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤. \n");
 	_getch();
 }
 
@@ -45,15 +43,15 @@ void game_control(void) {
 	system("cls");
 	draw_rectangle(box_length, box_height);
 	gotoxy(box_length*2+5,3);
-	printf("ºí·ÏÀÇ °³¼ö: %2d", box_height);
+	printf("ë¸”ë¡ì˜ ê°œìˆ˜: %2d", box_height);
 	gotoxy(1, box_height + 3);
-	printf("½ºÆäÀÌ½º Å°¸¦ ´©¸£¸é ºí·ÏÀÌ ¶³¾îÁö°í\n¹Ù´Ú¿¡ ½×ÀÔ´Ï´Ù.\n");
+	printf("ìŠ¤í˜ì´ìŠ¤ í‚¤ë¥¼ ëˆ„ë¥´ë©´ ë¸”ë¡ì´ ë–¨ì–´ì§€ê³ \në°”ë‹¥ì— ìŒ“ì…ë‹ˆë‹¤.\n");
 
 	while (count < box_height) {
 		gotoxy(box_length * 2 + 5, 4);
-		printf("½ÃµµÇÑ È½¼ö: %2d", count +1);
+		printf("ì‹œë„í•œ íšŸìˆ˜: %2d", count +1);
 		gotoxy(box_length * 2 + 5, 5);
-		printf("½×ÀÎ ºí·Ï¼ö : %2d", (max_block()==14)?15: max_block());
+		printf("ìŒ“ì¸ ë¸”ë¡ìˆ˜ : %2d", (max_block()==14)?15: max_block());
 		x = left_right_move();
 		move_down(x);
 		count++;
@@ -65,14 +63,14 @@ int left_right_move(void) {
 	int x = 3, y = 2, temp = 2;
 	do {
 		x += temp;
-		if (x > (box_length * 2 -2)) //x¹æÇâ ÃÖ´ë°ª ¼³Á¤
+		if (x > (box_length * 2 -2)) //xë°©í–¥ ìµœëŒ€ê°’ ì„¤ì •
 			temp = -2;
 		if (x < 3) {
 			x = 3; temp = 2;
 		}
 		gotoxy(x, y);
-		printf("¡á");
-		Sleep(500); //ºí·ÏÀÌ ÁÂ¿ì·Î ¿òÁ÷ÀÌ´Â ¼Óµµ
+		printf("â– ");
+		Sleep(500); //ë¸”ë¡ì´ ì¢Œìš°ë¡œ ì›€ì§ì´ëŠ” ì†ë„
 		gotoxy(x, y);
 		printf("  ");
 	} while (!_kbhit());
@@ -84,14 +82,14 @@ void move_down(int x) {
 	int y;
 	for (y = 2; y < box_height + 2 - block_stack[x]; y += 1) {
 		gotoxy(x, y);
-		printf("¡á");
+		printf("â– ");
 		Sleep(20);
 		gotoxy(x, y);
 		printf("  ");
 		Sleep(10);
 	}
 	gotoxy(x, box_height + 2 - block_stack[x]);
-	printf("¡á");
+	printf("â– ");
 }
 
 int max_block(void) {
